@@ -13,6 +13,7 @@
             background-color: #0a0a0a;
             color: #ffffff;
             margin: 0;
+            overflow-x: hidden;
         }
         .mono { font-family: 'JetBrains+Mono', monospace; }
         .glass {
@@ -40,20 +41,29 @@
         }
     </style>
     <script type="importmap">
-{
-  "imports": {
-    "react": "https://esm.sh/react@19.0.0",
-    "react-dom": "https://esm.sh/react-dom@19.0.0",
-    "react-dom/client": "https://esm.sh/react-dom@19.0.0/client",
-    "@google/genai": "https://esm.sh/@google/genai@1.40.0",
-    "react-dom/": "https://esm.sh/react-dom@^19.2.4/",
-    "react/": "https://esm.sh/react@^19.2.4/"
-  }
-}
-</script>
+    {
+      "imports": {
+        "react": "https://esm.sh/react@18.3.1",
+        "react-dom": "https://esm.sh/react-dom@18.3.1",
+        "react-dom/client": "https://esm.sh/react-dom@18.3.1/client",
+        "react/": "https://esm.sh/react@18.3.1/",
+        "react-dom/": "https://esm.sh/react-dom@18.3.1/"
+      }
+    }
+    </script>
 </head>
 <body>
-    <div id="root"></div>
-    <!-- The index.tsx is automatically imported as a module by the platform -->
+    <div id="root">
+        <!-- Loader to show while React initializes -->
+        <div style="height: 100vh; display: flex; align-items: center; justify-content: center; background: #0a0a0a; color: #444; font-family: sans-serif;">
+            <div style="text-align: center;">
+                <div style="width: 40px; height: 40px; border: 3px solid #1a1a1a; border-top-color: #ea580c; border-radius: 50%; animation: spin 1s linear infinite; margin: 0 auto 20px;"></div>
+                <p style="font-size: 10px; letter-spacing: 0.2em; font-weight: bold; color: #666;">FORGING EXPERIENCE...</p>
+            </div>
+        </div>
+    </div>
+    <style>
+        @keyframes spin { to { transform: rotate(360deg); } }
+    </style>
 </body>
 </html>
